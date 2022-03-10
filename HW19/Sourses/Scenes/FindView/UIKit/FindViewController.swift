@@ -11,18 +11,25 @@ class FindViewController: UIViewController {
     
     var collectionView: UICollectionView!
     let data = FindViewItem.findViewItem
-    
+    let search = UISearchController(searchResultsController: nil)
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        setupNavController()
+        setupSearchController()
+        setupCollectionView()
+    }
+    
+    func setupNavController() {
         title = "Поиск"
         navigationController?.navigationBar.prefersLargeTitles = true
-        let search = UISearchController(searchResultsController: nil)
+    }
+    
+    func setupSearchController() {
         search.searchResultsUpdater = self
-        
         self.navigationItem.searchController = search
         self.navigationItem.hidesSearchBarWhenScrolling = false
-        setupCollectionView()
     }
     
     func setupCollectionView() {
