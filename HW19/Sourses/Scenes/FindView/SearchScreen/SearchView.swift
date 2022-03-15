@@ -109,7 +109,7 @@ struct LastSearchList: View {
                 Button {
                     searchText.searchResult = index
                     playerPresenter.timerSlider = 0
-                    UIApplication.shared.endEditing(true)
+//                    UIApplication.shared.endEditing(true)
                 } label: {
                     SearchResultCell(SearchResultCellItem: index)
                 }
@@ -153,7 +153,7 @@ struct SearchFilterButton: View {
             searchText.searchResult = item
             playerPresenter.timerSlider = 0
             searchText.lastSearch.append(item)
-            UIApplication.shared.endEditing(true)
+//            UIApplication.shared.endEditing(true)
         } label: {
             SearchResultCell(SearchResultCellItem: item)
             
