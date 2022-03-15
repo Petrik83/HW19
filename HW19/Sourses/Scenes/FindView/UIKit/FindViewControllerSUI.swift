@@ -12,9 +12,11 @@ struct FindViewControllerSUI: UIViewControllerRepresentable {
     
     func makeUIViewController(context: Context) -> UIViewController {
         
-        let searchViewController = FindViewController()
-        let searchNavigationController = UINavigationController(rootViewController: searchViewController)
-        return searchNavigationController
+        let controller = UINavigationController(rootViewController: FindViewController())
+        let searchController = UISearchController()
+        controller.navigationBar.topItem?.hidesSearchBarWhenScrolling = false
+        controller.navigationBar.topItem?.searchController = searchController
+        return controller
     }
     
     func updateUIViewController(_ uiViewController: UIViewControllerType, context: Context) {
