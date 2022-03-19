@@ -16,7 +16,6 @@
 		6D53705327DA5E0200ED5A17 /* SecondaryHorizontalCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D53703327DA5E0200ED5A17 /* SecondaryHorizontalCell.swift */; };
 		6D53705427DA5E0200ED5A17 /* ThirdHorizontalCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D53703427DA5E0200ED5A17 /* ThirdHorizontalCell.swift */; };
 		6D53705527DA5E0200ED5A17 /* MainHorizontalCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D53703527DA5E0200ED5A17 /* MainHorizontalCell.swift */; };
-		6D53705627DA5E0200ED5A17 /* FindField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D53703727DA5E0200ED5A17 /* FindField.swift */; };
 		6D53705727DA5E0200ED5A17 /* SearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D53703827DA5E0200ED5A17 /* SearchView.swift */; };
 		6D53705827DA5E0200ED5A17 /* SearchResultCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D53703927DA5E0200ED5A17 /* SearchResultCell.swift */; };
 		6D53705927DA5E0200ED5A17 /* FindView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D53703A27DA5E0200ED5A17 /* FindView.swift */; };
@@ -50,7 +49,6 @@
 		6D53703327DA5E0200ED5A17 /* SecondaryHorizontalCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SecondaryHorizontalCell.swift; sourceTree = "<group>"; };
 		6D53703427DA5E0200ED5A17 /* ThirdHorizontalCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ThirdHorizontalCell.swift; sourceTree = "<group>"; };
 		6D53703527DA5E0200ED5A17 /* MainHorizontalCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainHorizontalCell.swift; sourceTree = "<group>"; };
-		6D53703727DA5E0200ED5A17 /* FindField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FindField.swift; sourceTree = "<group>"; };
 		6D53703827DA5E0200ED5A17 /* SearchView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchView.swift; sourceTree = "<group>"; };
 		6D53703927DA5E0200ED5A17 /* SearchResultCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchResultCell.swift; sourceTree = "<group>"; };
 		6D53703A27DA5E0200ED5A17 /* FindView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FindView.swift; sourceTree = "<group>"; };
@@ -169,7 +167,6 @@
 		6D53703627DA5E0200ED5A17 /* SearchScreen */ = {
 			isa = PBXGroup;
 			children = (
-				6D53703727DA5E0200ED5A17 /* FindField.swift */,
 				6D53703827DA5E0200ED5A17 /* SearchView.swift */,
 				6D53703927DA5E0200ED5A17 /* SearchResultCell.swift */,
 			);
@@ -179,9 +176,9 @@
 		6D53703B27DA5E0200ED5A17 /* UIKit */ = {
 			isa = PBXGroup;
 			children = (
+				6D53703E27DA5E0200ED5A17 /* FindViewControllerSUI.swift */,
 				6D53703C27DA5E0200ED5A17 /* FindViewHeader.swift */,
 				6D53703D27DA5E0200ED5A17 /* CategoryViewUIK.swift */,
-				6D53703E27DA5E0200ED5A17 /* FindViewControllerSUI.swift */,
 				6D53703F27DA5E0200ED5A17 /* FindViewController.swift */,
 				6D53704027DA5E0200ED5A17 /* FindViewControllerCell.swift */,
 			);
@@ -348,7 +345,6 @@
 				6D536FE927DA5D2F00ED5A17 /* RadioModel.swift in Sources */,
 				6D53705F27DA5E0200ED5A17 /* ListView.swift in Sources */,
 				6D53706727DA5E0200ED5A17 /* TimerView.swift in Sources */,
-				6D53705627DA5E0200ED5A17 /* FindField.swift in Sources */,
 				6D53705B27DA5E0200ED5A17 /* CategoryViewUIK.swift in Sources */,
 				6D53705C27DA5E0200ED5A17 /* FindViewControllerSUI.swift in Sources */,
 			);

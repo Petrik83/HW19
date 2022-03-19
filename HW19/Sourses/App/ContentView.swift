@@ -16,7 +16,7 @@ struct ContentView: View {
     
     @State var selection = Set<UUID>()
     @State var shouldEditViewAppiar = false
-    @State var showCancelButton: Bool = false
+    @State var showPlayer: Bool? = true
     @State var queryString = ""
     
     @EnvironmentObject var playerPresenter: PlayerPresenter
@@ -55,23 +55,19 @@ struct ContentView: View {
                     Text("Радио")
                 }
                 
-//                NavigationView{
-//                    FindView(showCancelButton: $showCancelButton)
-//                        .environmentObject(picker)
-//                        .navigationTitle("Поиск")
-                FindViewControllerSUI()
+                FindViewControllerSUI(showPlayer: $showPlayer)
                     .ignoresSafeArea(.all)
-//                }
-                .tabItem {
-                    Image(systemName: "magnifyingglass")
-                    Text("Поиск")
-                }
+                    .tabItem {
+                        Image(systemName: "magnifyingglass")
+                        Text("Поиск")
+                    }
             }
             
-            if playerPresenter.showPlayerView {
+            if showPlayer != nil && showPlayer! {
                 PlayerView()
                     .padding(.bottom, Metric.playerViewPadding)
             }
+            
             FullScreenPlayer()
         }
     }

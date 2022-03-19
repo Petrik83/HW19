@@ -17,15 +17,7 @@ class FindViewControllerCell: UICollectionViewCell {
         super.init(frame: frame)
         viewHierarchy()
         setupLayout()
-        
-        icon.contentMode = .scaleToFill
-        icon.clipsToBounds = true
-        icon.layer.cornerRadius = 10
-        
-        title.textColor = UIColor.white
-        title.font = UIFont.systemFont(ofSize: 16, weight: .medium)
-        title.lineBreakMode = .byWordWrapping
-        title.numberOfLines = 0
+        setupElements()
     }
     
     required init?(coder: NSCoder) {
@@ -35,6 +27,17 @@ class FindViewControllerCell: UICollectionViewCell {
     private func viewHierarchy() {
         addSubview(icon)
         addSubview(title)
+    }
+    
+    private func setupElements() {
+        icon.contentMode = .scaleToFill
+        icon.clipsToBounds = true
+        icon.layer.cornerRadius = 10
+        
+        title.textColor = UIColor.white
+        title.font = UIFont.systemFont(ofSize: 16, weight: .medium)
+        title.lineBreakMode = .byWordWrapping
+        title.numberOfLines = 0
     }
     
     private func setupLayout() {

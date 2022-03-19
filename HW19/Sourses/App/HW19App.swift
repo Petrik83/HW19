@@ -17,6 +17,7 @@ class PlayerPresenter: ObservableObject {
 
 class SearchText: ObservableObject {
     @Published var searchText = ""
+    @Published var hintButtonDidPressed = false
     @Published var lastSearch = [SectionItem]()
     @Published var searchResult = SectionItem(image: "Не исполняется", title: "Не исполняется", subTitle: "", compositionDuration: 1)
 }

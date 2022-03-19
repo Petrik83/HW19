@@ -12,17 +12,21 @@ class FindViewController: UIViewController {
     var collectionView: UICollectionView!
     let data = FindViewItem.findViewItem
     
-    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        setupNavController()
+        setupCollectionView()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        navigationController?.navigationBar.tintColor = .systemBlue
+
+    }
+        
+    func setupNavController() {
         title = "Поиск"
         navigationController?.navigationBar.prefersLargeTitles = true
-        let search = UISearchController(searchResultsController: nil)
-        search.searchResultsUpdater = self
-        
-        self.navigationItem.searchController = search
-        self.navigationItem.hidesSearchBarWhenScrolling = false
-        setupCollectionView()
     }
     
     func setupCollectionView() {
@@ -110,12 +114,6 @@ extension FindViewController: UICollectionViewDelegate {
                 navigationController?.navigationBar.tintColor = .systemRed
                 navigationController?.navigationBar.topItem?.backButtonTitle = ""
                 navigationController?.pushViewController(vc, animated: true)
-    }
-}
-
-extension FindViewController: UISearchResultsUpdating {
-    func updateSearchResults(for searchController: UISearchController) {
-        print(searchController.searchBar.text ?? "")
     }
 }
 
