@@ -9,7 +9,6 @@ import SwiftUI
 
 struct SearchView: View {
     
-//    var pickerChoices = ["Apple Music", "Ваша Медиатека"]
     var columns = [GridItem(.flexible())]
     @EnvironmentObject var picker: PickerChoise
     @EnvironmentObject var searchText: SearchText
@@ -17,16 +16,6 @@ struct SearchView: View {
     
     var body: some View {
         VStack {
-//            Text("khjghg")
-//            Picker(selection: $picker.pickerSelection, label: Text("")) {
-//                ForEach(pickerChoices, id: \.self) {
-//                    Text($0)
-//                }
-//            }
-//            .pickerStyle(.segmented)
-//            .padding(.horizontal, SearchViewMetric.horizontalPadding)
-//            Spacer()
-            
             if searchText.searchText == "" {
                 if !searchText.lastSearch.isEmpty {
                     LastSearchBar()
@@ -126,7 +115,6 @@ struct SearchHintsButton: View {
     var item = String()
     
     var body: some View {
-        
         Button {
             searchText.searchText = item
             searchText.hintButtonDidPressed = true
@@ -142,7 +130,6 @@ struct SearchHintsButton: View {
             }
         }
     }
-    
 }
 
 struct SearchFilterButton: View {
@@ -151,7 +138,6 @@ struct SearchFilterButton: View {
     var item: SectionItem
     
     var body: some View {
-        
         Button {
             searchText.searchResult = item
             playerPresenter.timerSlider = 0
@@ -159,15 +145,12 @@ struct SearchFilterButton: View {
             UIApplication.shared.sendAction(#selector(UIResponder.resignFirstResponder), to: nil, from: nil, for: nil)
         } label: {
             SearchResultCell(SearchResultCellItem: item)
-            
         }
     }
-    
 }
 
 enum SearchViewMetric {
     static let horizontalPadding = 20.0
     static let trailingPadding = 10.0
     static let spacing = 0.0
-    
 }
