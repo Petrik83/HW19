@@ -179,9 +179,9 @@
 		6D53703B27DA5E0200ED5A17 /* UIKit */ = {
 			isa = PBXGroup;
 			children = (
+				6D53703E27DA5E0200ED5A17 /* FindViewControllerSUI.swift */,
 				6D53703C27DA5E0200ED5A17 /* FindViewHeader.swift */,
 				6D53703D27DA5E0200ED5A17 /* CategoryViewUIK.swift */,
-				6D53703E27DA5E0200ED5A17 /* FindViewControllerSUI.swift */,
 				6D53703F27DA5E0200ED5A17 /* FindViewController.swift */,
 				6D53704027DA5E0200ED5A17 /* FindViewControllerCell.swift */,
 			);

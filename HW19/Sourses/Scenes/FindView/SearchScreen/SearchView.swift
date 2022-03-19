@@ -9,7 +9,7 @@ import SwiftUI
 
 struct SearchView: View {
     
-    var pickerChoices = ["Apple Music", "Ваша Медиатека"]
+//    var pickerChoices = ["Apple Music", "Ваша Медиатека"]
     var columns = [GridItem(.flexible())]
     @EnvironmentObject var picker: PickerChoise
     @EnvironmentObject var searchText: SearchText
@@ -17,14 +17,15 @@ struct SearchView: View {
     
     var body: some View {
         VStack {
-            Picker(selection: $picker.pickerSelection, label: Text("")) {
-                ForEach(pickerChoices, id: \.self) {
-                    Text($0)
-                }
-            }
-            .pickerStyle(.segmented)
-            .padding(.horizontal, SearchViewMetric.horizontalPadding)
-            Spacer()
+//            Text("khjghg")
+//            Picker(selection: $picker.pickerSelection, label: Text("")) {
+//                ForEach(pickerChoices, id: \.self) {
+//                    Text($0)
+//                }
+//            }
+//            .pickerStyle(.segmented)
+//            .padding(.horizontal, SearchViewMetric.horizontalPadding)
+//            Spacer()
             
             if searchText.searchText == "" {
                 if !searchText.lastSearch.isEmpty {

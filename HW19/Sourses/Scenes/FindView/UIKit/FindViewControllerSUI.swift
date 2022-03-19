@@ -12,21 +12,30 @@ struct FindViewControllerSUI: UIViewControllerRepresentable {
     
 //    @EnvironmentObject var playerPresenter: PlayerPresenter
     @Binding var showPlayer: Bool?
+    @EnvironmentObject var searchText: SearchText
+
     func makeCoordinator() -> Coordinator {
         return FindViewControllerSUI.Coordinator(parent: self)
     }
     
     func makeUIViewController(context: Context) -> UIViewController {
-        
+        let searchView = UIHostingController(rootView: SearchView())
         let controller = UINavigationController(rootViewController: FindViewController())
-        let searchController = UISearchController()
+        
+        let searchController = UISearchController(searchResultsController: searchView)
+//        searchController.searchBar.text = "hkjhj"
+        searchController.showsSearchResultsController = true
+        searchController.searchBar.scopeButtonTitles = ["Apple Music", "Ваша Медиатека"]
         searchController.searchBar.delegate = context.coordinator
+        
         controller.navigationBar.topItem?.hidesSearchBarWhenScrolling = false
         controller.navigationBar.topItem?.searchController = searchController
+        
         return controller
     }
     
     func updateUIViewController(_ uiViewController: UIViewControllerType, context: Context) {
+        uiViewController.navigationItem.searchController?.searchBar.text = searchText.searchText
     }
 }
 
@@ -48,6 +57,7 @@ extension FindViewControllerSUI {
         
         func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
             parent.showPlayer = false
+            parent.searchText.searchText = searchText
             print(searchText)
         }
         

@@ -14,8 +14,8 @@
             filePath = "HW19/Sourses/Scenes/FindView/UIKit/FindViewControllerSUI.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "55"
-            endingLineNumber = "55"
+            startingLineNumber = "65"
+            endingLineNumber = "65"
             landmarkName = "searchBarCancelButtonClicked(_:)"
             landmarkType = "7">
          </BreakpointContent>

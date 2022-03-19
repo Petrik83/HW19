@@ -16,7 +16,7 @@ struct ContentView: View {
     
     @State var selection = Set<UUID>()
     @State var shouldEditViewAppiar = false
-    @State var showPlayer: Bool? = nil
+    @State var showPlayer: Bool? = true
     @State var queryString = ""
     
     @EnvironmentObject var playerPresenter: PlayerPresenter
