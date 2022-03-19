@@ -129,6 +129,8 @@ struct SearchHintsButton: View {
         
         Button {
             searchText.searchText = item
+            searchText.hintButtonDidPressed = true
+            UIApplication.shared.sendAction(#selector(UIResponder.resignFirstResponder), to: nil, from: nil, for: nil)
         } label: {
             HStack(spacing: SearchViewMetric.spacing) {
                 Image(systemName: "magnifyingglass")

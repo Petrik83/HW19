@@ -13,6 +13,7 @@ struct FindViewControllerSUI: UIViewControllerRepresentable {
 //    @EnvironmentObject var playerPresenter: PlayerPresenter
     @Binding var showPlayer: Bool?
     @EnvironmentObject var searchText: SearchText
+    let controller = UINavigationController(rootViewController: FindViewController())
 
     func makeCoordinator() -> Coordinator {
         return FindViewControllerSUI.Coordinator(parent: self)
@@ -20,7 +21,6 @@ struct FindViewControllerSUI: UIViewControllerRepresentable {
     
     func makeUIViewController(context: Context) -> UIViewController {
         let searchView = UIHostingController(rootView: SearchView())
-        let controller = UINavigationController(rootViewController: FindViewController())
         
         let searchController = UISearchController(searchResultsController: searchView)
 //        searchController.searchBar.text = "hkjhj"
@@ -35,7 +35,6 @@ struct FindViewControllerSUI: UIViewControllerRepresentable {
     }
     
     func updateUIViewController(_ uiViewController: UIViewControllerType, context: Context) {
-        uiViewController.navigationItem.searchController?.searchBar.text = searchText.searchText
     }
 }
 
@@ -53,6 +52,10 @@ extension FindViewControllerSUI {
         
         func searchBarTextDidEndEditing(_ searchBar: UISearchBar) {
             parent.showPlayer = true
+            if parent.searchText.hintButtonDidPressed {
+                parent.controller.navigationBar.topItem?.searchController?.searchBar.text = parent.searchText.searchText
+                parent.searchText.hintButtonDidPressed = false
+            }
         }
         
         func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
@@ -63,6 +66,7 @@ extension FindViewControllerSUI {
         
         func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
             parent.showPlayer = true
+            parent.controller.navigationBar.topItem?.searchController?.searchBar.text = ""
         }
     }
 }
