@@ -11,13 +11,11 @@ class FindViewController: UIViewController {
     
     var collectionView: UICollectionView!
     let data = FindViewItem.findViewItem
-//    let search = UISearchController(searchResultsController: nil)
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         setupNavController()
-//        setupSearchController()
         setupCollectionView()
     }
     
@@ -25,19 +23,11 @@ class FindViewController: UIViewController {
         navigationController?.navigationBar.tintColor = .systemBlue
 
     }
-    
-    
-    
+        
     func setupNavController() {
         title = "Поиск"
         navigationController?.navigationBar.prefersLargeTitles = true
     }
-    
-//    func setupSearchController() {
-//        search.searchResultsUpdater = self
-//        self.navigationItem.searchController = search
-//        self.navigationItem.hidesSearchBarWhenScrolling = false
-//    }
     
     func setupCollectionView() {
         collectionView = UICollectionView(frame: view.bounds, collectionViewLayout: setupCompositionLayout())
@@ -126,12 +116,6 @@ extension FindViewController: UICollectionViewDelegate {
                 navigationController?.pushViewController(vc, animated: true)
     }
 }
-
-//extension FindViewController: UISearchResultsUpdating {
-//    func updateSearchResults(for searchController: UISearchController) {
-//        print(searchController.searchBar.text ?? "")
-//    }
-//}
 
 enum LayoutSectionConstants {
     static let itemContentInsets = 10.0
