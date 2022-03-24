@@ -70,7 +70,7 @@ struct FirstSectionScrollView: View {
     var body: some View {
         ScrollView(.horizontal, showsIndicators: false) {
             LazyHGrid(rows: rows) {
-                ForEach(0..<item.count) {index in
+                ForEach(0..<item.count, id:\.self) {index in
                     MainHorizontalCell(mainHorizontalCellItem: item[index])
                         .frame(width: UIScreen.main.bounds.width * CategoryViewMetric.firstLazyHGridScale, height: UIScreen.main.bounds.width * CategoryViewMetric.firstLazyHGridScale)
                 }
@@ -105,7 +105,7 @@ struct SecondSectionScrollView: View {
     var body: some View {
         ScrollView(.horizontal, showsIndicators: false) {
             LazyHGrid(rows: secondRows, spacing: 0) {
-                ForEach(0..<item.count) {index in
+                ForEach(0..<item.count, id:\.self) {index in
                     SecondaryHorizontalCell(secondaryHorizontalCellItem: item[index])
                         .frame(width: UIScreen.main.bounds.width * CategoryViewMetric.secondLazyHGridScale)
                 }
@@ -121,7 +121,7 @@ struct ThirdSectionScrollView: View {
     var body: some View {
         ScrollView(.horizontal, showsIndicators: false) {
             LazyHGrid(rows: thirdRows, spacing: CategoryViewMetric.thirdLazyHGridSpacing) {
-                ForEach(0..<item.count) { index in
+                ForEach(0..<item.count, id:\.self) { index in
                     ThirdHorizontalCell(thirdHorizontalCellItem: item[index])
                         .frame(width: UIScreen.main.bounds.width * CategoryViewMetric.thirdLazyHGridScale)
                 }

@@ -17,7 +17,7 @@ struct RadioView: View {
                 Divider()
                 ScrollView(.horizontal, showsIndicators: false) {
                     LazyHGrid(rows: rows) {
-                        ForEach(0..<RadioItem.horizontalRadioItem.count) { index in
+                        ForEach(0..<RadioItem.horizontalRadioItem.count, id:\.self) { index in
                             HorizontalCell(cellData: RadioItem.horizontalRadioItem[index])
                                 .frame(width: geometry.size.width * RadioViewMetric.lazyHGridScale, height: geometry.size.width * RadioViewMetric.lazyHGridScale)
                                 .padding(.trailing, RadioViewMetric.lazyHGridPadding)
@@ -33,7 +33,7 @@ struct RadioView: View {
                             .font(.title)
                         Spacer()
                     }) {
-                        ForEach(0..<RadioItem.verticalRadioItem.count) { index in
+                        ForEach(0..<RadioItem.verticalRadioItem.count, id:\.self) { index in
                             VStack {
                                 VerticalCell(cellData: RadioItem.verticalRadioItem[index])
                                     .frame(width: geometry.size.width, height: geometry.size.width / RadioViewMetric.verticalRadioItemFrameDivider)

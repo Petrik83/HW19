@@ -19,7 +19,7 @@ struct StartFindView: View {
                             .bold()
                         Spacer()
                     }) {
-                        ForEach(0..<FindViewItem.findViewItem.count) { index in
+                        ForEach(0..<FindViewItem.findViewItem.count, id:\.self) { index in
                             StartFindViewCell(cellData: FindViewItem.findViewItem[index])
                                 .frame(width: geometry.size.width / 2, height: geometry.size.width / 3)
                         }
